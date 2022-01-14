@@ -42,5 +42,17 @@ Summary - "Each microservice should believe that is the only service in the worl
 
 - **Command** - Command is a combination of expressed intent. It describes something that you want to be done. It also contains the information required to undertake action based on that intent. Commands are named with a verb in the imperative mood.
 
-- **Events** - Events are objects that describe something that has occurred in the application. A typical source of events is the aggregate. When something important has occurred within the aggregate, it will raise an event. Events are typically named in past participal verb.
+- **Events** - Events are objects that describe something that has occurred in the application. A typical source of events is the aggregate. When something important has occurred within the aggregate, it will raise an event. Events are typically named in past participial verb.
+
+### Mediator Pattern
+
+- Behavioural Design Pattern.
+- Promotes loose coupling by preventing objects from referring to each other explicitly.
+- Simplifies communication between objects by introducing a single object known as the mediator that manages the distribution of messages among other objects.
+- In this project - messages are commands.
+
+<img src = "MediatorPattern.png" alt = "Mediator Pattern" title = "Mediator Pattern"/>
+
+<img src = "CommandDispatcher.png" alt = "Command Dispatcher" title = "Command Dispatcher"/>
+
 

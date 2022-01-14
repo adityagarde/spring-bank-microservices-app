@@ -7,4 +7,4 @@
 - Build with Spring Boot + Kafka and MySQL + MongoDB.
 - [CQRS Theory](resources/Theory.md)
 
-<img src = "resources/ProjectOverview.png" alt = "Project Overview" title = "Types of IO"/>
+<img src = "resources/ProjectOverview.png" alt = "Project Overview" title = "Project Overview"/>
