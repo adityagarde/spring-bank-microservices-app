@@ -1,6 +1,6 @@
 package com.github.adityagarde.account.cmd.domain;
 
-import com.github.adityagarde.account.cmd.api.OpenAccountCommand;
+import com.github.adityagarde.account.cmd.api.commands.OpenAccountCommand;
 import com.github.adityagarde.account.common.events.AccountClosedEvent;
 import com.github.adityagarde.account.common.events.AccountOpenedEvent;
 import com.github.adityagarde.account.common.events.FundsDepositedEvent;

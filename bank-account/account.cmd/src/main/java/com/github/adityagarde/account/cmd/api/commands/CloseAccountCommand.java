@@ -1,4 +1,4 @@
-package com.github.adityagarde.account.cmd.api;
+package com.github.adityagarde.account.cmd.api.commands;
 
 import com.github.adityagarde.cqrs.core.commands.BaseCommand;
 
