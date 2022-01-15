@@ -51,8 +51,20 @@ Summary - "Each microservice should believe that is the only service in the worl
 - Simplifies communication between objects by introducing a single object known as the mediator that manages the distribution of messages among other objects.
 - In this project - messages are commands.
 
-<img src = "MediatorPattern.png" alt = "Mediator Pattern" title = "Mediator Pattern"/>
+<img src = "MediatorPattern.png" alt = "Mediator Pattern" height = "360px" title = "Mediator Pattern"/>
 
-<img src = "CommandDispatcher.png" alt = "Command Dispatcher" title = "Command Dispatcher"/>
+<img src = "CommandDispatcher.png" alt = "Command Dispatcher" height = "360px" title = "Command Dispatcher"/>
+
+#### CQRS Topics contd. -
+
+- **Aggregate** - An aggregate is an entity or group of entities that is always kept in a consistent state. The aggregate root is the entity within the aggregate that is responsible for maintaining the consistent state. This makes the aggregate the primary building block for implementing a command model in any CQRS based application.
+
+- **Event Store** -
+  - Event store is a database that is used to store the data as a sequence of immutable events over time. It is a key enabler of event sourcing.
+  - An event store must be an **append only store**, no update or delete operations should be allowed.
+  - Each event that is saved should represent the version or state of an aggregate at any given point in time.
+  - Events should be stored in chronological order, and new events should be appended to the previous event.
+  - The state of the aggregate should be regrettable by replaying the event store.
+  - The event store should implement optimistic concurrency control.
 
 
