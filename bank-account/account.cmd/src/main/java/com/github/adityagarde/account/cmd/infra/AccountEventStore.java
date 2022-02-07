@@ -7,6 +7,7 @@ import com.github.adityagarde.cqrs.core.events.EventModel;
 import com.github.adityagarde.cqrs.core.exceptions.AggregateNotFoundException;
 import com.github.adityagarde.cqrs.core.exceptions.ConcurrencyException;
 import com.github.adityagarde.cqrs.core.infra.EventStore;
+import com.github.adityagarde.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ public class AccountEventStore implements EventStore {
 
     @Autowired
     private EventStoreRepository eventStoreRepository;
+
+    @Autowired
+    private EventProducer eventProducer;
 
     @Override
     public void saveEvents(String aggregateId, Iterable<BaseEvent> events, int expectedVersion) {
@@ -40,8 +44,8 @@ public class AccountEventStore implements EventStore {
                     .build();
 
             var persistedEvent = eventStoreRepository.save(eventModel);
-            if (null != persistedEvent) {
-                // TODO: Produce event to Kafka
+            if (!persistedEvent.getId().isEmpty()) {
+                eventProducer.produce(event.getClass().getSimpleName(), event);
             }
         }
     }
