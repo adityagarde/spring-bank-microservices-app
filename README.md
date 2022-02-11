@@ -5,7 +5,7 @@
 - CQRS & Event Sourcing with Kafka.
 - A simple app to open and close a bank account, add and remove funds and also query all transactions.
 - Build with Spring Boot + Kafka and MySQL + MongoDB.
-- [CQRS Theory](resources/Theory.md)
+- [CQRS and Event Sourcing Theory](resources/Theory.md)
 
 <img src = "resources/ProjectOverview.png" alt = "Project Overview" title = "Project Overview"/>
 
@@ -39,7 +39,7 @@
   -v mysql_data_container:/var/lib/mysql  \
   mysql:latest
 ```
-Adminer (for MySQL)
+- Adminer (for MySQL)
 
 ```shell
   docker run -it -d --name adminer \
